@@ -14,9 +14,7 @@
 </template>
 
 <script>
-	
 	import Conf from "../config.js" ;
-
 	export default {
 		data () {
 			return {

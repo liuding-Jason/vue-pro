@@ -1,6 +1,6 @@
 
 import Home from "./pages/home.vue" ;
-import List from "./pages/list.vue" ;
+import List from "./pages/ld-list.vue" ;
 import Msite from "./pages/msite/index.vue" ;
 
 export default {
@@ -10,7 +10,7 @@ export default {
   	{ path : '/' , redirect : '/home' } ,			// 默认路由
     { path : '/msite/' , component : Msite } ,
     { path : '/home' , component : Home } ,
-    { path : '/list' , component : List }
+    { path : '/list' , component : List } 
   ]
 };
 
