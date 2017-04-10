@@ -23,8 +23,7 @@
 			}
 		} ,
 		mounted(){
-			console.log("mounted");
-
+			console.log("mounted") ;
 		}
 	}
 
@@ -39,8 +38,8 @@
 }
 
 .item-con-thumb {
-	height: 3rem ;
-	width: 3rem ;
+	height: 2.5rem ;
+	width: 2.5rem ;
 	max-height: 150px;
 	max-width: 150px;
 	position: absolute;
@@ -57,8 +56,8 @@
 }
 
 .item-con-info{
-	margin-left: 3.05763rem ;
-	height: 3rem ;
+	margin-left: 2.55763rem ;
+	height: 2.5rem ;
 	max-height: 150px;
 }
 
