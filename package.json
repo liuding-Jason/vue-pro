@@ -36,6 +36,7 @@
     "karma-webpack": "^2.0.3",
     "sourcemap": "^0.1.0",
     "surge": "^0.18.0",
+    "url-loader": "^0.5.8",
     "vue-loader": "^9.9.5",
     "vue-template-compiler": "^2.2.4",
     "webpack": "^1.14.0",

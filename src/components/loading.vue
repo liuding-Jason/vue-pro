@@ -1,6 +1,6 @@
 
 <template>
-	<div class="load-con">
+	<div class="load-con"  v-show={show}>
 		<div class="load-bg">
 			<span class="load-item load-item-1"></span>
 			<span class="load-item load-item-2"></span>
@@ -27,11 +27,32 @@
 	*/
 
 	export default {
+		props : [
+			showFlag : Boolean ,
+			delay : Number
+		] ,
 		data(){
-			return {}
+			return {
+				show : this.showFlag || true
+			}
+		} ,
+		computed : {
+
+		} ,
+		methods : {
+			showLoading(){
+				this.show = true ;
+			} ,
+			hideLoading(){
+				this.show = false ;
+			}
 		} ,
 		mounted(){
-			console.log("loading");
+			console.log(this.show);
+			
+			setTimeout(() => {
+				this.hideLoading() ;
+			} , 5000);	
 		}
 	}
 
@@ -68,7 +89,7 @@
 	display: inline-block;
 	height: 20px ;
 	width: 7px ;
-	border-radius: 10px ;
+	border-radius: 7px ;
 	background-color:  #B3B3B3;
 	position:absolute;
 }
@@ -146,7 +167,7 @@ to {background-color: #E6E6E6}
 	-moz-transform : rotate(120deg); 	/* Firefox */
 	-webkit-transform : rotate(120deg); /* Safari 和 Chrome */
 	-o-transform : rotate(120deg); 	/* Opera */
-	left: 53px;
+	left: 54px;
     top: 40px;
 	animation:mymove .55s linear .2s infinite;
 	-webkit-animation:mymove .55s linear .2s infinite; /*Safari and Chrome*/

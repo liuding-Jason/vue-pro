@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<loading ></loading>
+		<loading :showFlag="true" :delay="5000"></loading>
 		<ul class="mod-stu">
 			<li>
 				<b class="mod-stu-name">名字</b>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-	import loading from "../components/loading.vue" ;
+	import loading from "../components/toast.vue" ;
 	import Conf from "../config.js" ;
 	export default {
 		data () {
