@@ -11,8 +11,6 @@
 </template>
 
 <script>
-	import listItem from "./ld-listItem.vue" ;
-
 	export default {
 		data (){
 			return {

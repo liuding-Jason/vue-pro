@@ -1,19 +1,23 @@
 <template>
-	<ul class="mod-stu">
-		<li>
-			<b class="mod-stu-name">名字</b>
-			<span class="mod-stu-age">年龄</span>
-			<i class="mod-stu-score"> 分数</i>
-		</li>
-		<li v-for="item in list" >
-			<b class="mod-stu-name">{{item['name']}}</b>
-			<span class="mod-stu-age">{{item['age']}}</span>
-			<i class="mod-stu-score">{{item['score']}}</i>
-		</li>
-	</ul>
+	<div>
+		<loading ></loading>
+		<ul class="mod-stu">
+			<li>
+				<b class="mod-stu-name">名字</b>
+				<span class="mod-stu-age">年龄</span>
+				<i class="mod-stu-score"> 分数</i>
+			</li>
+			<li v-for="item in list" >
+				<b class="mod-stu-name">{{item['name']}}</b>
+				<span class="mod-stu-age">{{item['age']}}</span>
+				<i class="mod-stu-score">{{item['score']}}</i>
+			</li>
+		</ul>
+	</div>
 </template>
 
 <script>
+	import loading from "../components/loading.vue" ;
 	import Conf from "../config.js" ;
 	export default {
 		data () {
@@ -39,7 +43,7 @@
 			}
 		} ,
 
-		components : {  } ,
+		components : { loading } ,
 
 		methods : {
 			hello : function(){
