@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<loading :showFlag="true" :delay="5000"></loading>
+		<loading v-bind:type="success" v-bind:message="提交成功"></loading>
 		<ul class="mod-stu">
 			<li>
 				<b class="mod-stu-name">名字</b>

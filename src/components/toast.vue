@@ -1,14 +1,14 @@
 
 <!--
 	Toast Component
-	@type : success  failed info 
+	@type : success  faild info warn
 	@content : 提交成功
-	@delay : 200 
+	@delay : 1000 
  -->
 
 <template>
 	<div class="toast-con">
-		<div class="toast-con-top"><span ></span></div>
+		<div class="toast-con-top"><span></span></div>
 		<div class="toast-con-message">{{message || "提示信息"}}</div>
 	</div>
 </template>
@@ -18,7 +18,7 @@
 		props : ["type" , "message"] ,
 		data(){
 			return {
-				iconBg : require("../lib/success.png")
+				
 			}
 		} ,
 		methods : {
@@ -33,7 +33,9 @@
 
 		} ,
 		mounted(){
-			console.log(this.iconBg) ;
+			console.log(this);
+			console.log("type : %s , message : %s" , this.type , this.message);
+			
 		}
 
 	}
@@ -68,9 +70,27 @@
 	height: 30px ;
 	width: 30px ;
 	margin-top: 10px ;
-	background-image: url(../lib/success.png) ;
 	background-repeat: no-repeat ;
 	background-size: cover ;
+}
+
+.toast-con-top span.success {
+	background-color: #92D341 ;
+	/* background-image: url(../lib/success.png) ; */
+}
+
+.toast-con-top span.faild {
+	background-color: #F88043 ;
+	/* background-image: url(); */
+}
+
+.toast-con-top span.info {
+	background-color: #058FDA ;
+	/* background-image: url(); */
+}
+
+.toast-con-top span.warn {
+	background-color: #E1C615 ;
 }
 
 .toast-con-message {
