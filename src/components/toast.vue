@@ -7,18 +7,27 @@
  -->
 
 <template>
-	<div class="toast-con">
-		<div class="toast-con-top"><span></span></div>
+	<div class="toast-con" v-show="">
+		<div class="toast-con-top"><span :style="{height: '100%'}" ></span></div>
 		<div class="toast-con-message">{{message || "提示信息"}}</div>
 	</div>
 </template>
 
 <script >
 	export default {
-		props : ["type" , "message"] ,
+		props : {
+			type : {
+				type : String ,
+				default : "success" 
+			} ,
+			message : {
+				type : String ,
+				default : "提交成功"
+			}
+		} ,
 		data(){
 			return {
-				
+				show : true
 			}
 		} ,
 		methods : {
