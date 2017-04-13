@@ -1,7 +1,7 @@
 
 <template>
-	<div class="load-con"  v-show={show}>
-		<div class="load-bg">
+	<transition name="load-fade">
+		<div class="load-bg" v-show="show">
 			<span class="load-item load-item-1"></span>
 			<span class="load-item load-item-2"></span>
 			<span class="load-item load-item-3"></span>
@@ -15,7 +15,7 @@
 			<span class="load-item load-item-11"></span>
 			<span class="load-item load-item-12"></span>
 		</div>
-	</div>
+	</transition>
 </template>
 
 <script>
@@ -27,13 +27,16 @@
 	*/
 
 	export default {
-		props : [
-			showFlag : Boolean ,
-			delay : Number
-		] ,
+		props : {
+			showFlag : {
+				type : Boolean ,
+				default : false
+			}
+
+		} ,
 		data(){
 			return {
-				show : this.showFlag || true
+				show : this.showFlag
 			}
 		} ,
 		computed : {
@@ -48,10 +51,8 @@
 			}
 		} ,
 		mounted(){
-			console.log(this.show);
-			
 			setTimeout(() => {
-				this.hideLoading() ;
+				this.showLoading() ;
 			} , 5000);	
 		}
 	}
@@ -255,6 +256,13 @@ to {background-color: #E6E6E6}
     top: 10px;
 	animation:mymove .55s linear .55s infinite;
 	-webkit-animation:mymove .55s linear .55s infinite; /*Safari and Chrome*/
+}
+
+.load-fade-enter-active, .load-fade-leave-active {
+  transition: opacity .2s
+}
+.load-fade-enter, .load-fade-leave-active {
+  opacity: 0
 }
 
 </style>

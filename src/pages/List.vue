@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<loading :type="success" :message="提交成功"></loading>
+		<toast :type="success" :message="提交成功" :delay="2000"></toast>
 		<ul class="mod-stu">
 			<li>
 				<b class="mod-stu-name">名字</b>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+	import toast from "../components/toast.vue" ;
 	import loading from "../components/toast.vue" ;
 	import Conf from "../config.js" ;
 	export default {
@@ -43,7 +44,7 @@
 			}
 		} ,
 
-		components : { loading } ,
+		components : { loading , toast } ,
 
 		methods : {
 			hello : function(){

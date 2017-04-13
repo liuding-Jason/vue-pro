@@ -1,16 +1,18 @@
 
 <!--
 	Toast Component
-	@type : success  faild info warn
+	@type : success faild info warn
 	@content : 提交成功
 	@delay : 1000 
  -->
 
 <template>
-	<div class="toast-con" v-show="">
-		<div class="toast-con-top"><span :style="{height: '100%'}" ></span></div>
-		<div class="toast-con-message">{{message || "提示信息"}}</div>
-	</div>
+	<transition name="toast-fade">
+		<div class="toast-con" v-show="show">
+			<div class="toast-con-top"><span :style="{height: '100%'}" ></span></div>
+			<div class="toast-con-message">{{message || "提示信息"}}</div>
+		</div>
+	</transition>
 </template>
 
 <script >
@@ -23,6 +25,10 @@
 			message : {
 				type : String ,
 				default : "提交成功"
+			} ,
+			delay : {
+				type : Number ,
+				default : 1000
 			}
 		} ,
 		data(){
@@ -32,19 +38,21 @@
 		} ,
 		methods : {
 			showToast(){
-
+				this.show = true ;
 			} ,
 			hideToast(){
-
+				this.show = false ;
 			}
 		} ,
 		components : {
 
 		} ,
 		mounted(){
-			console.log(this);
 			console.log("type : %s , message : %s" , this.type , this.message);
-			
+
+			setTimeout(() => {
+				this.hideToast() ;
+			} , this.delay);
 		}
 
 	}
@@ -62,11 +70,11 @@
 	z-index: 900 ;
 	border-radius: 15px;
 	background-color: rgba(0 , 0 , 0 , 0.5) ;
-	-webkit-transform: translate(-50%, -50%);
-	-moz-transform: translate(-50%, -50%);
-	-ms-transform: translate(-50%, -50%);
-	-o-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%) ;
+	-moz-transform: translate(-50%, -50%) ;
+	-ms-transform: translate(-50%, -50%) ;
+	-o-transform: translate(-50%, -50%) ;
+	transform: translate(-50%, -50%) ;
 }
 
 .toast-con-top {
@@ -113,5 +121,13 @@
     overflow : hidden ;
     text-overflow : ellipsis ;
 }
+
+.toast-fade-enter-active, .toast-fade-leave-active {
+  transition: opacity .3s
+}
+.toast-fade-enter, .toast-fade-leave-active {
+  opacity: 0
+}
+
 
 </style>
