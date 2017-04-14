@@ -17,7 +17,6 @@
 
 		mounted(){
 			console.log("scroll");
-
 		}
 
 	}
@@ -26,7 +25,7 @@
 
 <style scoped>
 .scroll-con {
-
+	
 }
 
 </style>
