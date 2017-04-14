@@ -1,15 +1,14 @@
 <template>
-	<div>
-		<div v-for="item in list" :data="item">
-			<a class="item-con" @click="onClick"> 
-				<div class="item-con-thumb">
-					<div class="con-thumb" ></div>
-				</div>
-				<div class="item-con-info">
-					<div class="info-title">{{item['title']}}</div>
-					<div class="info-des">{{item['describeInfo']}}</div>
-				</div>
-			</a>
+	<div @click="_onClick">
+		<div class="item-con" v-for="item in listData" :data="item">
+			<div class="item-cover" :id="item['id']"></div> 
+			<div class="item-con-thumb">
+				<div class="con-thumb" ></div>
+			</div>
+			<div class="item-con-info">
+				<div class="info-title">{{item['title']}}</div>
+				<div class="info-des">{{item['describeInfo']}}</div>
+			</div>
 		</div>
 	</div>
 </template>
@@ -17,30 +16,38 @@
 <script>
 	
 	export default {
-		props : [] ,
+		props : {
+			listData :  {
+				type : Array ,
+				default : []
+			} ,
+			onClick : {
+				type : Function ,
+				default : () => {}
+			}
+		} ,
 		data (){
 			return {
-				list : [{
-					thumbnail : '' ,
-					title : 'ListItem1' ,
-					describeInfo : 'ListItem Component1' ,
-					onClick : function(){}
-				} , {
-					thumbnail : '' ,
-					title : 'ListItem2' ,
-					describeInfo : 'ListItem Component2' ,
-					onClick : function(){}
-				} , {
-					thumbnail : '' ,
-					title : 'ListItem3' ,
-					describeInfo : 'ListItem Component3' ,
-					onClick : function(){}
-				}]
 			}
 		} ,
 		components : {} ,
+		methods : {
+			_onClick (ev){
+				let id = ev.target.getAttribute("id") ;
+				let tProps = {} ;
+				this.listData.map((item , infdex) => {
+					let {id , title , describeInfo} = item ;
+					if(id * 1 === item['id'] * 1){
+						// 这里返回的是计算属性
+						// return item 行不通
+						return tProps = {id , title , describeInfo} ;
+					}
+				});
+				this.onClick(tProps);
+			}
+		} ,
 		mounted(){
-			console.log("mounted");
+			console.log("List") ;
 		}
 	}
 
@@ -53,6 +60,14 @@
 	overflow: hidden ;
 	position: relative;
 	border-bottom: 1px solid #ccc ;
+	position: relative;
+}
+
+.item-cover {
+	position: absolute;
+	z-index: 100 ;
+	width: 100% ;
+	height: 2.5rem ;
 }
 
 .item-con-thumb {
@@ -88,15 +103,12 @@
 
 .item-con-info .info-des{
 	width: 100% ;
-	font-size: .35rem ;
+	font-size: .45rem ;
 	margin-top:10px ;
 	word-break:keep-all;
 	/* white-space:nowrap; */
 	overflow:hidden ;
 	text-overflow:ellipsis;
 }
-
-
-
 
 </style>

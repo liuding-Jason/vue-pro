@@ -51,6 +51,8 @@
 			}
 		} ,
 		mounted(){
+
+			// TODO : test 
 			setTimeout(() => {
 				this.showLoading() ;
 			} , 5000);	

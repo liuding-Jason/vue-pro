@@ -13,12 +13,14 @@
 				<i class="mod-stu-score">{{item['score']}}</i>
 			</li>
 		</ul>
+		<list :listData="mockList" :onClick="_onClick.bind(this)"></list>
 	</div>
 </template>
 
 <script>
 	import toast from "../components/toast.vue" ;
-	import loading from "../components/toast.vue" ;
+	import loading from "../components/loading.vue" ;
+	import list from "../components/list.vue" ;
 	import Conf from "../config.js" ;
 	export default {
 		data () {
@@ -40,11 +42,27 @@
 						age : 16 ,
 						score : 100
 					}
-				]
+				] ,
+				mockList : [{
+					id : 1 ,
+					thumbnail : '' ,
+					title : 'ListItem1' ,
+					describeInfo : 'ListItem Component1'
+				} , {
+					id : 2 ,
+					thumbnail : '' ,
+					title : 'ListItem2' ,
+					describeInfo : 'ListItem Component2' 
+				} , {
+					id : 3 ,
+					thumbnail : '' ,
+					title : 'ListItem3' ,
+					describeInfo : 'ListItem Component3' 
+				}]
 			}
 		} ,
 
-		components : { loading , toast } ,
+		components : { loading , toast , list } ,
 
 		methods : {
 			hello : function(){
@@ -56,6 +74,9 @@
 					return false ;
 				}
 				return true ;
+			} ,
+			_onClick :  (props) => {
+				console.log(props);
 			}
 		} ,
 
