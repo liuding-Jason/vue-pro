@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<list-item v-for="item in list" :data="item" ></list-item>
-
+		
 	</div>
 </template>
 

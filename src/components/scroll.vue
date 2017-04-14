@@ -25,6 +25,7 @@
 
 <style scoped>
 .scroll-con {
+	overflow: auto ;
 	
 }
 
