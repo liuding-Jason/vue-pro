@@ -6,7 +6,7 @@
   "author": "liuding",
   "license": "ISC",
   "scripts": {
-    "dev-mac" : "export NODE_ENV=develop && webpack-dev-server --devtool eval --progress" ,
+    "dev-mac": "export NODE_ENV=develop && webpack-dev-server --devtool eval --progress",
     "dev": "set NODE_ENV=develop && webpack-dev-server --devtool eval --progress",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "predeploy": "npm run build",
@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.3",
     "vue": "^2.0.0-beta.1",
     "vue-resource": "^1.2.0",
     "vue-router": "^2.3.0",
