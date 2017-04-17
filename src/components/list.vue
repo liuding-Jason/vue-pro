@@ -1,9 +1,9 @@
 <template>
 	<div>
 	<touch></touch>
-	<div @click="_onClick">
+	<div @click.stop.prevent="_onClick">
 		<div class="item-con" v-for="item in listData" :data="item">
-			<div class="item-cover" :id="item['id']"></div> 
+			<div class="item-cover" :id="item['id']"></div>
 			<div class="item-con-thumb">
 				<div class="con-thumb" ></div>
 			</div>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+	
 	import touch from "./touch.vue" ;
 	export default {
 		props : {
