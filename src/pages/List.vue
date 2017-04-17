@@ -21,6 +21,7 @@
 	import toast from "../components/toast.vue" ;
 	import loading from "../components/loading.vue" ;
 	import list from "../components/list.vue" ;
+	import nodata from "../components/nodata.vue" ;
 	import Conf from "../config.js" ;
 	export default {
 		data () {
@@ -62,7 +63,7 @@
 			}
 		} ,
 
-		components : { loading , toast , list } ,
+		components : { loading , toast , list , nodata } ,
 
 		methods : {
 			hello : function(){

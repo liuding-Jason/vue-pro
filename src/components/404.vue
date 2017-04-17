@@ -1,30 +1,28 @@
 <template>
-	<div class="scroll-con">
-		
+	<div class="nodata-con">
+		404
 	</div>
 </template>
 
-<script >
+<script type="text/javascript">
 	export default {
-
 		data(){
 			return {
 
 			}
-		} ,
-
+		},
 		mounted(){
-			console.log("scroll");
+			// TODO test
+			console.log("404");
 		}
-
 	}
-
 </script>
 
 <style scoped>
-.scroll-con {
-	overflow: auto ;
+
+.nodata-con {
 
 }
 
+	
 </style>

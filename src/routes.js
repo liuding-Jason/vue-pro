@@ -2,6 +2,7 @@
 import Home from "./pages/home.vue" ;
 import List from "./pages/List.vue" ;
 import Msite from "./pages/msite/index.vue" ;
+import Nodata from "./components/nodata.vue" ;
 
 export default {
   mode: 'history',
@@ -10,7 +11,8 @@ export default {
   	{ path : '/' , redirect : '/home' } ,			// 默认路由
     { path : '/msite/' , component : Msite } ,
     { path : '/home' , component : Home } ,
-    { path : '/list' , component : List }  
+    { path : '/list' , component : List } ,
+    { path : '/nodata' , component : Nodata } 
   ]
 };
 
