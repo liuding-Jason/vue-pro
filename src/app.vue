@@ -1,10 +1,8 @@
 <template>
-  <div>
-      <transition name="path-fade" mode="out-in">
-        <!-- 路由匹配到的组件将渲染在这里 -->
-        <router-view></router-view>
-      </transition>
-  </div>
+  <transition name="path-fade" mode="out-in">
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
+  </transition>
 </template>
 
 <script>

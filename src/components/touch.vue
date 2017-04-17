@@ -1,5 +1,6 @@
 <!-- 
-	Touch Component : Only Tap and Press are supported by now . 
+	Touch Component : Only Tap and Press are supported by now .
+	Problems : tap fun would delay 300ms when used in phone . How to deal with it ! 
  -->
 
 <template>
