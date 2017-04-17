@@ -70,11 +70,11 @@
 	z-index: 900 ;
 	border-radius: 15px;
 	background-color: rgba(0 , 0 , 0 , 0.5) ;
-	-webkit-transform: translate(-50%, -50%) ;
-	-moz-transform: translate(-50%, -50%) ;
-	-ms-transform: translate(-50%, -50%) ;
-	-o-transform: translate(-50%, -50%) ;
-	transform: translate(-50%, -50%) ;
+	-webkit-transform: translate(-50%, -55%) ;
+	-moz-transform: translate(-50%, -55%) ;
+	-ms-transform: translate(-50%, -55%) ;
+	-o-transform: translate(-50%, -55%) ;
+	transform: translate(-50%, -55%) ;
 }
 
 .toast-con-top {
@@ -114,7 +114,7 @@
 	height : 36px ;
 	line-height : 36px;
 	font-size : 13px ;
-	color : #eee ;
+	color : #fff ;
 	text-align : center ;
 	padding : 0 3px ;
 	white-space : nowrap ;

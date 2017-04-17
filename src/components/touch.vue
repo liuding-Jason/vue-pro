@@ -1,12 +1,13 @@
 <!-- 
 	Touch Component : Only Tap and Press are supported by now .
-	Problems : tap fun would delay 300ms when used in phone . How to deal with it ! 
+	Problems : 1 > tap fun would delay 300ms when used in phone . How to deal with it ! 
+			   2 > how to add children components to touch components .
  -->
 
 <template>
 	<div class="touch-con" @touchstart="_touchStart($event)" @touchmove="_touchMove($event)" @touchend="_touchEnd($event)">
 		<div class="touch-child"> 
-
+			<slot></slot>
 		</div>
 	</div>
 </template>
