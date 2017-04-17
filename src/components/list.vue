@@ -1,4 +1,6 @@
 <template>
+	<div>
+	<touch></touch>
 	<div @click="_onClick">
 		<div class="item-con" v-for="item in listData" :data="item">
 			<div class="item-cover" :id="item['id']"></div> 
@@ -11,10 +13,11 @@
 			</div>
 		</div>
 	</div>
+	</div>
 </template>
 
 <script>
-	
+	import touch from "./touch.vue" ;
 	export default {
 		props : {
 			listData :  {
@@ -30,14 +33,14 @@
 			return {
 			}
 		} ,
-		components : {} ,
+		components : { touch } ,
 		methods : {
 			_onClick (ev){
-				let id = ev.target.getAttribute("id") ;
+				let idNow = ev.target.getAttribute("id") ;
 				let tProps = {} ;
 				this.listData.map((item , infdex) => {
 					let {id , title , describeInfo} = item ;
-					if(id * 1 === item['id'] * 1){
+					if(idNow * 1 === id * 1){
 						// 这里返回的是计算属性
 						// return item 行不通
 						return tProps = {id , title , describeInfo} ;
@@ -97,7 +100,7 @@
 .item-con-info .info-title{
 	font-weight: 700 ;
 	font-size: .65rem ;
-	margin-top: 10px;
+	padding-top: 10px;
 	width: 100% ;
 }
 
