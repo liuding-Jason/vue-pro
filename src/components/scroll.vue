@@ -9,6 +9,9 @@
 			<div>6</div>
 			<div>7</div>
 		</div>
+		<div class="scroll-icon">
+			<span></span>
+		</div>
 	</div>
 </template>
 
@@ -37,6 +40,10 @@
 				// scrollHeight -- 滚动内容的高度
 				// offsetHeight -- 滚动区域的高度
 				// scrollTop    -- 可滚动的距离
+
+				// el.WebKitOverflowScrolling = 'auto';
+				// el.scrollTop = 500;
+				// el.WebKitOverflowScrolling = 'touch';
 
 				// 去掉上滚触发
 				if(ev.target.scrollTop < this.tempScrollTop + 10){
@@ -73,6 +80,7 @@
 
 <style scoped>
 .scroll-con {
+	-webkit-overflow-scrolling : touch ;
 	overflow-y: auto ;
 
 	/*test*/
