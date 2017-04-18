@@ -1,90 +1,89 @@
 <template>
-	<div class="scroll-con" @touchstart.prevent.stop="_touchStart($event)" @touchmove.stop.prevent="_touchMove($event)" @touchend.stop.prevent="_touchEnd($event)">
-		<div class="scroll-info" :style="{ transform: 'translate3d(0, ' + top + 'px, 0)' }">
-			<div>1</div>
-			<div>2</div>
-			<div>3</div>
-			<div>4</div>
-			<div>5</div>
-			<div>6</div>
-			<div>7</div>
-		</div>
+	<div class="scroll-con" @scroll.stop.prevent="_onScroll($event)">
+		<div>1</div>
+		<div>2</div>
+		<div>3</div>
+		<div>4</div>
+		<div>5</div>
+		<div>6</div>
+		<div>7</div>
 	</div>
 </template>
 
-<script >
+<script>
 	export default {
 		props : {
-
+			infinite : {
+				type : Number ,
+				default : 10
+			} ,
+			loadFinish : {
+				type : Function ,
+				default : function(){}
+			}
 		} ,
 		data(){
 			return {
-				top : 0 ,
-				startX : 0 ,
-				startY : 0 ,
-				moveY : 0 ,
-				loadMoreTime : 0 ,
-				loadMoreFlag : true ,
-				touchStartTime : 0 ,
-				touchEndTime : 0
+				tempScrollTop : 0 ,
+				delay : 300 ,   // loadmore delay time
+				loadfalg : true , // loadmore flag
+				loadtime : 0.    // loadmore time
 			}
 		} ,
-		components : {} ,
 		methods : {
-			_touchStart(ev){
-				this.startX = ev.targetTouches[0].pageX ;
-				this.startY = ev.targetTouches[0].pageY ;
-				// 开始滚动的距离
-				this.startScroll = this.$el.scrollTop || 0;
-				console.log("touch start");
+			_onScroll(ev){
+				// scrollHeight -- 滚动内容的高度
+				// offsetHeight -- 滚动区域的高度
+				// scrollTop    -- 可滚动的距离
+
+				// 去掉上滚触发
+				if(ev.target.scrollTop < this.tempScrollTop + 10){
+					this.tempScrollTop = ev.target.scrollTop ;
+					return ;
+				}
+				let diff = ev.target.scrollHeight - ev.target.offsetHeight - ev.target.scrollTop ;
+				let infiniteDis = this.infinite / 100 * ev.target.scrollTop ;
+				this.tempScrollTop = ev.target.scrollTop ;
+
+				if(diff < infiniteDis && this.loadfalg){
+					this.loadmore() ;
+				}
 			} ,
-			_touchMove(ev){
-				let endY = ev.targetTouches[0].pageY ;
-				let diff = e.targetTouches[0].pageY - this.startY - this.startScroll
-                if(diff > 0) e.preventDefault()
-                this.top = Math.pow(diff, 0.8) + (this.state === 2 ? this.offset : 0)
+			loadmore(){
+				// 防止重复加载
+				this.loadfalg = false ;
+				this.loadtime = setTimeout(() => {
+					this.loadfalg = true ;
+				} , this.delay);
 
-
-			} , 
-			_touchEnd(ev){
-				let endX = ev.changedTouches[0].pageX ,
-					endY = ev.changedTouches[0].pageY ;
-
-
-
+				console.log("loadmore");
 			} ,
-			loadMoreFun(){
-				console.log("loadMoreFun");
-			}
+
 		} ,
-		mounted(){
+		mounted (){
+			
+			// TODO test
 			console.log("scroll");
 		}
-	}
+	}	
 
 </script>
 
 <style scoped>
 .scroll-con {
-	overflow: auto ;
-	-webkit-overflow-scrolling: touch ;
-	
+	overflow-y: auto ;
+
 	/*test*/
-	background-color : lightgreen ;
-	position: fixed;
+	background-color: lightgreen ;
+	position: relative;
 	height: 100% ;
-	width: 100% ;
-
+	width: 100%;
 }
 
-.scroll-info {
-	height: auto ;
-	width: 100% ;
-}
-
-.scroll-info div {
-	height: 200px ;
+.scroll-con div {
+	height: 200px;
 	border-bottom: 3px solid #ccc ;
 }
+
 
 </style>
