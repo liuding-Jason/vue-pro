@@ -1,12 +1,14 @@
 <template>
 	<div class="scroll-con" @scroll.stop.prevent="_onScroll($event)">
-		<div>1</div>
-		<div>2</div>
-		<div>3</div>
-		<div>4</div>
-		<div>5</div>
-		<div>6</div>
-		<div>7</div>
+		<div class="scroll-content">
+			<div>1</div>
+			<div>2</div>
+			<div>3</div>
+			<div>4</div>
+			<div>5</div>
+			<div>6</div>
+			<div>7</div>
+		</div>
 	</div>
 </template>
 
@@ -80,7 +82,11 @@
 	width: 100%;
 }
 
-.scroll-con div {
+.scroll-content {
+
+}
+
+.scroll-content div {
 	height: 200px;
 	border-bottom: 3px solid #ccc ;
 }
