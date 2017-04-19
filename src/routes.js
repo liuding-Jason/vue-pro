@@ -4,6 +4,7 @@ import List from "./pages/List.vue" ;
 import Msite from "./pages/msite/index.vue" ;
 import Nodata from "./components/nodata.vue" ;
 import Scroll from "./components/scroll.vue" ;
+import Cover from "./components/cover.vue";
 
 export default {
   mode: 'history',
@@ -14,7 +15,8 @@ export default {
     { path : '/home' , component : Home } ,
     { path : '/list' , component : List } ,
     { path : '/nodata' , component : Nodata } ,
-    { path : '/scroll' , component : Scroll }
+    { path : '/scroll' , component : Scroll } ,
+    { path : '/cover' , component : Cover }
   ]
 };
 

@@ -8,5 +8,6 @@ import scroll  from "./scroll.vue" ;
 import toast   from "./toast.vue" ;
 import list	   from "./list.vue" ; 
 import nodata  from "./nodata.vue" ;
+import cover   from "./cover.vue" ;
 
-module.exports = { loading , scroll , toast , list , nodata} ;
+module.exports = { loading , scroll , toast , list , nodata , cover} ;
