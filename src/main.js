@@ -7,7 +7,7 @@ import Router from "./routes" ;
 import store from "./store"
 import App  from "./app.vue" ; 
 
-Vue.use(VueRouter);
+Vue.use(VueRouter) ;
 
 const app = new Vue({
 	store ,

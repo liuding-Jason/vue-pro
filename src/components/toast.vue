@@ -9,13 +9,16 @@
 <template>
 	<transition name="toast-fade">
 		<div class="toast-con" v-show="show">
-			<div class="toast-con-top"><span :style="{height: '100%'}" ></span></div>
+			<div class="toast-con-top"><icon name="chameleon" :scale="20"></icon>></div>
 			<div class="toast-con-message">{{message || "提示信息"}}</div>
 		</div>
 	</transition>
 </template>
 
 <script >
+
+	import icon from 'vue-svg-icon/Icon.vue' ;
+
 	export default {
 		props : {
 			type : {
@@ -45,7 +48,7 @@
 			}
 		} ,
 		components : {
-
+			icon
 		} ,
 		mounted(){
 			console.log("type : %s , message : %s" , this.type , this.message);

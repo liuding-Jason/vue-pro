@@ -18,10 +18,7 @@
 </template>
 
 <script>
-	import toast from "../components/toast.vue" ;
-	import loading from "../components/loading.vue" ;
-	import list from "../components/list.vue" ;
-	import nodata from "../components/nodata.vue" ;
+	import { toast , loading , nodata , list} from "../components/ld-components.js" ;
 	import Conf from "../config.js" ;
 	export default {
 		data () {
