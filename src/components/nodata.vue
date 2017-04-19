@@ -1,7 +1,11 @@
 <template>
 	<div class="nodata-con flex flex-vc flex-hc">
 		<div>	
-			<div class="nodata-img"><span></span></div>
+			<div class="nodata-img">
+				<span>
+					<icon name="nodata" :scale="6"></icon>
+				</span>
+			</div>
 			<p class="nodata-content">{{content}}</p>	
 		</div>
 	</div>
@@ -48,16 +52,15 @@
 
 .nodata-img span {
 	display: inline-block ;
-	height: 75px ;
-	width: 75px ;
-	background-color: rgba(0 , 0 , 0 , 0.5);
+	height: 65px ;
+	width: 65px ;
 }
 
 .nodata-content {
 	width: 100% ;
 	text-align: center;
 	font-size: 13px ;
-	margin-top: 10px ;
+	margin-top: 8px ;
 }
 
 	

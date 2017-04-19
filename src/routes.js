@@ -2,7 +2,7 @@
 import Home from "./pages/home.vue" ;
 import List from "./pages/List.vue" ;
 import Msite from "./pages/msite/index.vue" ;
-import Nodata from "./components/404.vue" ;
+import Nodata from "./components/nodata.vue" ;
 import Scroll from "./components/scroll.vue" ;
 
 export default {

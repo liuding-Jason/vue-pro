@@ -3,22 +3,23 @@
 	Toast Component
 	@type : success faild info warn
 	@content : 提交成功
-	@delay : 1000 
+	@delay : 1000
+
+	problem : 怎么暴露给父组件设置子组件的状态 
  -->
 
 <template>
 	<transition name="toast-fade">
 		<div class="toast-con" v-show="show">
-			<div class="toast-con-top"><icon name="chameleon" :scale="20"></icon>></div>
+			<div class="toast-con-top">
+				<icon :name="type" :scale="4"></icon>
+			</div>
 			<div class="toast-con-message">{{message || "提示信息"}}</div>
 		</div>
 	</transition>
 </template>
 
 <script >
-
-	import icon from 'vue-svg-icon/Icon.vue' ;
-
 	export default {
 		props : {
 			type : {
@@ -48,11 +49,8 @@
 			}
 		} ,
 		components : {
-			icon
 		} ,
 		mounted(){
-			console.log("type : %s , message : %s" , this.type , this.message);
-
 			setTimeout(() => {
 				this.hideToast() ;
 			} , this.delay);
@@ -82,7 +80,10 @@
 
 .toast-con-top {
 	height: 40px ;
-	text-align: center;
+	line-height: 40px;
+	text-align: center ;
+	position: relative;
+	top: 10px;
 }
 
 .toast-con-top span{
@@ -117,6 +118,7 @@
 	height : 36px ;
 	line-height : 36px;
 	font-size : 13px ;
+	font-weight: 700 ;
 	color : #fff ;
 	text-align : center ;
 	padding : 0 3px ;
