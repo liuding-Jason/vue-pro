@@ -41,6 +41,15 @@
 			}
 		} ,
 		methods : {
+			init(){
+				this.$on(ToastShow , (data) => {
+					this.showToast() ;
+				})
+
+				this.$on(ToastHide , (data) => {
+					this.hideToast() ;
+				})
+			} ,
 			showToast(){
 				this.show = true ;
 			} ,
@@ -51,6 +60,8 @@
 		components : {
 		} ,
 		mounted(){
+			// 初始化
+			this.init() ;
 			setTimeout(() => {
 				this.hideToast() ;
 			} , this.delay);

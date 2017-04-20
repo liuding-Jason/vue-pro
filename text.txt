@@ -27,3 +27,8 @@ Vue.component('icon', Icon);
 
 
 如何解决Vue2.0中toast组件暴露给父组件控制显示与隐藏？
+
+通过Vue2.0新增的事件机制可以完成
+
+父组件：$emit(eventName , data)
+子组件：$on(eventName , (data) => {handle(data)})
