@@ -3,6 +3,13 @@
 
 2017年4月19日：
 
+在实际的项目中，全局的常量应该定义在哪里？
+
+第一：index.html 头部引用一个script加入定义
+
+第二：新建const.js文件，然后在index.html文件中引用
+
+
 如何在Vue2.0中集成SVG图标 ？
 
 通过vue-svg-icon
