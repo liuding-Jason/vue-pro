@@ -49,6 +49,7 @@
 				this.$on(ToastHide , (data) => {
 					this.hideToast() ;
 				})
+
 			} ,
 			showToast(){
 				this.show = true ;
@@ -82,11 +83,11 @@
 	z-index: 900 ;
 	border-radius: 15px;
 	background-color: rgba(0 , 0 , 0 , 0.5) ;
-	-webkit-transform: translate(-50%, -55%) ;
-	-moz-transform: translate(-50%, -55%) ;
-	-ms-transform: translate(-50%, -55%) ;
-	-o-transform: translate(-50%, -55%) ;
-	transform: translate(-50%, -55%) ;
+	-webkit-transform: translate(-50%, -85%) ;
+	-moz-transform: translate(-50%, -85%) ;
+	-ms-transform: translate(-50%, -85%) ;
+	-o-transform: translate(-50%, -85%) ;
+	transform: translate(-50%, -85%) ;
 }
 
 .toast-con-top {

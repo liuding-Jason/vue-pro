@@ -4,7 +4,7 @@
 
 <template>
 	<div class="cover-con">
-	
+		<h1>Hello World!</h1>
 	</div>
 </template>
 
@@ -24,8 +24,10 @@
 	position: relative ;
 	height: 100% ;
 	width: 100% ;
+
+	overflow: hidden;
 	
-	background-color: rgba(0 , 0 , 0 , 0.35);
+	background-color: rgba(0 , 0 , 0 , 0.5);
 }
 
 </style>
