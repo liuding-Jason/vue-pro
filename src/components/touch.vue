@@ -1,7 +1,7 @@
 <!-- 
 	Touch Component : Only Tap and Press are supported by now .
 	Problems : 1 > tap fun would delay 300ms when used in Iphone . How to deal with it ! 
-			   2 > how to add children components to touch components .
+			   2 > how to add children components to touch components . - slot
  -->
 
 <template>

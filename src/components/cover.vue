@@ -4,7 +4,7 @@
 
 <template>
 	<div class="cover-con">
-		<h1>Hello World!</h1>
+		<slot></slot>
 	</div>
 </template>
 
@@ -16,7 +16,6 @@
 			}
 		}
 	}
-
 </script>
 
 <style scoped>
