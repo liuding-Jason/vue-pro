@@ -94,10 +94,7 @@
 				this.touchEndTime = 0 ;
 			} ,
 			tapFun(){
-				//alert("tap");
-				console.log("tap") ;
 				this.tap();
-
 			} ,
 			pressFun(){
 				//alert("press") ;

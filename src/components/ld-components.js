@@ -9,5 +9,6 @@ import toast   from "./toast" ;
 import list	   from "./list" ; 
 import nodata  from "./nodata" ;
 import cover   from "./cover" ;
+import touch   from "./touch" ;
 
-module.exports = { loading , scroll , toast , list , nodata , cover} ;
+export { loading , scroll , toast , list , nodata , cover , touch } ;
