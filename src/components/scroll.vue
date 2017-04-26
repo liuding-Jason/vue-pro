@@ -70,7 +70,6 @@
 
 		} ,
 		mounted (){
-			
 			// TODO test
 			console.log("scroll");
 		}
