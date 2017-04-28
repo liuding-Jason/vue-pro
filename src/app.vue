@@ -20,7 +20,7 @@
     } ,
     methods : {
       init(){
-        console.log("project init") ;
+        console.log("project init finish") ;
       } ,
       add(num1 , num2){
         return num1 + num2 ;
