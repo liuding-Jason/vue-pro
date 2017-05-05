@@ -1,7 +1,7 @@
 <template>
   <transition name="path-fade" mode="out-in">
     <!-- 路由匹配到的组件将渲染在这里 -->
-    <div>
+    <div class="main-con">
       <router-view></router-view>
       <nav-list ></nav-list>
     </div>
@@ -38,6 +38,12 @@
 </script>
 
 <style>
+.main-con{
+  width: 100%;
+  height: 100% ;
+  padding-bottom: 2rem ;
+}
+
 .path-fade-enter-active, .path-fade-leave-active {
       transition: opacity .3s;
   }
