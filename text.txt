@@ -49,8 +49,14 @@ Vue.component('icon', Icon);
 通过Slot插口实现，在父组件中，在需要动态加入元素的地方，使用slot就可以实现动态内容的更新
 
 
+2017年5月5日：
 
+如何在Vue2.0中实现字符串的拼接：
 
+通过'v-bind:class' 或者':class'
+
+v-bind:class="'flex-v flex-vc topic-base-font ' + item['active']"
+:class="'flex-v flex-vc topic-base-font' + item['active']"
 
 
 

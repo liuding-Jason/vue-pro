@@ -14,11 +14,9 @@ export default {
   	{ path : '/' , redirect : '/home' } ,			// 默认路由
     { path : '/msite/' , component : Msite } ,
     { path : '/home' , component : Home } ,
-    { path : '/list' , component : List } ,
-    { path : '/nodata' , component : Nodata } ,
-    { path : '/scroll' , component : Scroll } ,
-    { path : '/cover' , component : Cover } ,
-    { path : '/loading' , component : Loading}
+    { path : '/consultation' , component : List } ,
+    { path : '/shopcar' , component : Nodata } ,
+    { path : '/personal' , component : Scroll } ,
   ]
 };
 

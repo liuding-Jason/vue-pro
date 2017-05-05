@@ -1,7 +1,7 @@
 <template>
 	<div class="nav-bar flex-h topic-border-top">
 	    <div class="nav-bar-item flex1 flex-h flex-hc flex-vc" v-for="item in list">
-	    	<a v-bind:class="'flex-v flex-vc topic-base-font ' + item['active']" :href="item['hash']" >
+	    	<a :class="'flex-v flex-vc topic-base-font ' + item['active']" :href="item['hash']" >
 	    		<icon v-if="item['active'] === 'active'" :name="item['actIcon']" :scale="3.2"></icon>
 	    		<icon v-else :name="item['defIcon']" :scale="3.2"></icon>
 	    		<span class="nav-bar-title">{{item['title']}}</span>
@@ -47,14 +47,7 @@
 				}]
 			}
 		} ,
-		computed : {
-			list : () => {
-				console.log(this.list);
-			}
-		} ,
 		mounted(){
-			console.log("nav") ;
-			console.log(this.list);
 		}
 	}
 </script>
@@ -67,6 +60,7 @@
   z-index: 100 ;
   height: 2rem ;
   width: 100% ;
+  background-color : #fbfbfb ;
 }
 
 .nav-bar-item {
