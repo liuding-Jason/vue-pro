@@ -1,14 +1,17 @@
 <template>
   <transition name="path-fade" mode="out-in">
     <!-- 路由匹配到的组件将渲染在这里 -->
-    <router-view></router-view>
+    <div>
+      <router-view></router-view>
+      <nav-list ></nav-list>
+    </div>
   </transition>
 </template>
 
 <script>
 
   import SetDpr from "./util/dpr" ;
-
+  import navList from "./components/navlist.vue" ;
   export default {
     name : 'app',
     data(){
@@ -17,6 +20,7 @@
       }
     } ,
     components: {
+      navList
     } ,
     methods : {
       init(){

@@ -1,0 +1,11 @@
+/*
+	主题CSS ：采用less和sass特点，将公共颜色提取，进行主题设置
+*/
+
+.topic-base-bg {
+	background-color: #FF8E6B ;
+}
+
+.topic-base-font {
+	color: #FF8E6B ;
+}
