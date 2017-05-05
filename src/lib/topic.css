@@ -7,5 +7,34 @@
 }
 
 .topic-base-font {
+	color: #515151 ;
+}
+
+.topic-base-font.active {
 	color: #FF8E6B ;
 }
+
+/* 
+	border 
+	note : 通过.01rem解决1像素的问题;
+ */
+.topic-border {
+	border: .01rem solid #515151 ;
+}
+
+.topic-border-top {
+	border-top: .01rem solid #515151 ;
+}
+
+.topic-border-bottom {
+	border-bottom: .01rem solid #515151 ;
+}
+
+.topic-border-left {
+	border-left: .01rem solid #515151 ;
+}
+
+.topic-border-right {
+	border-right: .01rem solid #515151 ;
+}
+

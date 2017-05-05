@@ -26,8 +26,6 @@ Vue.component('icon', Icon);
 4. 在组件中，直接使用
 <icon name="right" :scale="4"></icon>
 
-
-
 2017年4月20日：
 
 如何解决Vue2.0父级包含多个子元素的引用问题 ？
