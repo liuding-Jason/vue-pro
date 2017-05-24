@@ -1,109 +1,46 @@
 <template>
 	<div>
-		<h1>{{title}}</h1>
-		<button class="btn" @click="showTotalCount">actions直接使用</button>
-		<button class="btn" @click="getCountNum">mapActions使用</button>
-		<br/>
-		<br/>
-		<button class="btn" @click="addCount">mutation直接使用</button>
-		<button class="btn" @click="ADD_COUNT">mapMutations直接使用</button>
-		<show-count></show-count>
+		<carousel :data="carouselData" :setting="carouselSetting" />
 	</div>
 </template>
 
 <script>
-	import showCount from "../components/showCount.vue" ;
-	import Conf from "../config" ;
-	import VueResource from "vue-resource" ;
-	// 方式一 Vuex action mapActions
-	import {mapActions} from "vuex" ;
-	// 方式二 Vuex mutation mapMutations 
-	import {mapMutations} from "vuex" ;
-
+	import carousel from "../components/carousel.vue" ;
 	export default {
-		data () {
+		props : {
+			title : {
+				type : String ,
+				default : "主页" 
+			}
+		} ,
+		data(){
 			return {
-				title : "Hello Vue And Node Demo!" 
+
+				// TODO test datas
+				carouselData : [{
+					title : "1" ,
+					imgUrl : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495619323753&di=b96be9551d93ddbabaa3e81295696af0&imgtype=0&src=http%3A%2F%2Fpic2.ooopic.com%2F13%2F24%2F51%2F04b1OOOPIC33.jpg"
+				} , {
+					title : "2" ,
+					imgUrl : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495619323744&di=e96fd18f7132f30accbd5f56ea3ba74c&imgtype=0&src=http%3A%2F%2Fpic2.ooopic.com%2F12%2F09%2F64%2F46bOOOPICf5_1024.jpg"
+				} , {
+					title : "3" ,
+					imgUrl : "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1495619323758&di=9efb34dfd71d8752573a07c08405600f&imgtype=0&src=http%3A%2F%2Fpic2.ooopic.com%2F13%2F58%2F40%2F86bOOOPIC48_1024.jpg"
+				}] ,
+				carouselSetting : {}
 			}
 		} ,
 		components : {
-			showCount
+			carousel
 		} ,
-		methods : {
-			hello (){
-				console.log("hello");
-			} ,
-			judgeData(code , message){
-				if(code * 1 !== 0){
-					alert(message);
-					return false ;
-				}
-				return true ;
-			} ,
-			showTotalCount (){
-				// 方式一 Vuex action 直接引用
-				this.$store.dispatch('getCountNum');
-			} ,
-			...mapActions([
-				'getCountNum'
-			]) ,
-			addCount(){
-				// 方式一 Vuex mutation 直接使用
-				this.$store.commit("ADD_COUNT");
-			},
-			...mapMutations([
-				'ADD_COUNT' ,
-				'DELETE_COUNT' ,
-				'SHOW_COUNT'
-			])
+		mounted(){
+			console.log("Home");
+		}
 
-		} ,
-		watch : {
-			title : function(val){
-				console.log(`title has changed , and new value is ${val}`);
-			}
-		} ,
-		mounted (){
-			// your data format : 
-			// {
-			//		code : 0 ,
-			//		data : {
-			//			title : ''
-			//		} ,
-			//		message : ok
-			// }
-			//
-
-			//this.$http.post(Conf.BASEURL)
-			//.then(({code = void 0 , data = {} , message = "请求失败！"}) => {
-			//	if(!this.judgeData(code , message)) return ;
-			//	let {
-			//		title = ''
-			//	} = data ;	
-			//	title === '' ? title : this.title = title ;
-			//});
-			console.log(this.$store);
-			console.log("hello home");
-		} 
 	}
 </script>
 
-<style scope>
-
-.btn {
-	border : 1px solid #ccc ;
-	background-color : #87CA3D ;
-	color : #fff ;
-	text-align : center ;
-	padding : 5px 10px ;
-	font-weight : 700 ;
-	letter-spacing : 3px;
-	border-radius : 5px;
-}
-
-.btn:active{
-	color : #333 ;
-	border : none ;
-}
+<style scoped>
+	
 
 </style>

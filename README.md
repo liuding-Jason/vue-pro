@@ -9,9 +9,7 @@ used .
 ***
 
 # Technology stack
-	
 	Vue + Vue-Router + Vuex + Karma + ES6 + Webpack
-
 ## Vue 
 	
 Vue2.0 upgrades much amazing feature , like more excellent virtual-dom 、 bidirectional 

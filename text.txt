@@ -39,9 +39,6 @@ Vue.component('icon', Icon);
 子组件：$on(eventName , (data) => {handle(data)})
 
 
-
-
-
 2017年4月28日：
 
 如何解决Vue2.0的组件嵌套

@@ -15,8 +15,8 @@ export default {
     { path : '/msite/' , component : Msite } ,
     { path : '/home' , component : Home } ,
     { path : '/consultation' , component : List } ,
-    { path : '/shopcar' , component : Nodata } ,
-    { path : '/personal' , component : Scroll } ,
+    { path : '/shopcar' , component : Scroll } ,
+    { path : '/personal' , component : Nodata } ,
   ]
 };
 
