@@ -6,7 +6,7 @@
 			</div>
 		</div>
 		<div class="carousel-controller-con" >
-			<span class="topic-border topic-base-bg" v-for="item in data"></span>
+			<span class="topic-border" v-for="item in data"></span>
 		</div>
 	</div>
 </template>
@@ -20,7 +20,8 @@
 			} ,
 			setting : {
 				itemDefColor : "" || "#FFFFFF" ,
-				itemActColor : "" || '#FF8E6B' 
+				itemActColor : "" || '#FF8E6B' ,
+				during : 1500
 			}
 		} ,
 		data(){
@@ -28,11 +29,15 @@
 
 			}
 		} ,
+		methods : {
+			hello(){
+				//console.log("carousel-hello");
+			}
+		} ,
 		mounted(){
 			console.log("carousel") ;
 		}
 	}
-
 </script>
 
 <style scoped>
@@ -50,7 +55,7 @@
 }*/
 
 .carousel-img-item {
-	float: left;
+	
 }
 
 .carousel-img-item img{
@@ -70,9 +75,9 @@
 	border-radius: 50% ;
 	height: 14px ;
 	width: 14px ;
-	margin-right: 6px; 
+	margin-right: 6px ; 
+	background-color: #ffffff ;
+	opacity: .8 ;
 }
-
-
 
 </style>
