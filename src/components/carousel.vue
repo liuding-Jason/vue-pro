@@ -31,7 +31,6 @@
 		} ,
 		methods : {
 			hello(){
-				//console.log("carousel-hello");
 			}
 		} ,
 		mounted(){
